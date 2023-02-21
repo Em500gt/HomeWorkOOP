@@ -2,8 +2,8 @@ package animals;
 
 public abstract class Animal {
 
-    private int age;
-    private int weight;
+    protected int age;
+    protected int weight;
     private int countLimbs;
 
     public Animal(int age, int weight, int countLimbs){

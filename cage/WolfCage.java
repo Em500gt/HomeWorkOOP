@@ -1,7 +1,9 @@
 package cage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import Comporators.WolfComparator;
 import animals.Animal;
 import animals.Wolf;
 
@@ -47,6 +49,10 @@ public class WolfCage implements AnimalCage{
         else{
             System.out.println(wolfs.remove(0));
         }
+    }
+
+    public void sort(String condition){
+        Collections.sort(wolfs, new WolfComparator(condition));
     }
  
 }

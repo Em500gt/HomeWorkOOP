@@ -29,4 +29,11 @@ public class Wolf extends Animal {
         return MAX_WEIGHT;
     }
 
+    @Override
+    public String toString(){
+        return "Wolf{" +
+                "age=" + age +
+                ", weight=" + weight +
+                "}";
+    }
 }
