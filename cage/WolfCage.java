@@ -2,12 +2,10 @@ package cage;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import Comporators.WolfComparator;
-import animals.Animal;
 import animals.Wolf;
+import comporators.WolfComparator;
 
-public class WolfCage implements AnimalCage{
+public class WolfCage implements AnimalCage<Wolf>{
 
     private int clean;
     private ArrayList<Wolf> wolfs;
@@ -17,7 +15,7 @@ public class WolfCage implements AnimalCage{
     }
 
     @Override
-    public int addAnimal(Animal animals) {
+    public int addAnimal(Wolf animals) {
         wolfs.add((Wolf) animals);
         return wolfs.size();
     }
@@ -54,5 +52,5 @@ public class WolfCage implements AnimalCage{
     public void sort(String condition){
         Collections.sort(wolfs, new WolfComparator(condition));
     }
- 
+
 }

@@ -2,12 +2,10 @@ package cage;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import Comporators.LionComparator;
-import animals.Animal;
 import animals.Lion;
+import comporators.LionComparator;
 
-public class LionCage implements AnimalCage{
+public class LionCage implements AnimalCage<Lion>{
     
     private int clean;
     private ArrayList<Lion> lions;
@@ -17,7 +15,7 @@ public class LionCage implements AnimalCage{
     }
 
     @Override
-    public int addAnimal(Animal animals) {
+    public int addAnimal(Lion animals) {
         lions.add((Lion) animals);
         return lions.size();
     }
@@ -58,4 +56,5 @@ public class LionCage implements AnimalCage{
     public void sortByVolume(){
         Collections.sort(lions, new LionComparator());
     }
+
 }

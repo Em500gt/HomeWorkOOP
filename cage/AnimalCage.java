@@ -1,14 +1,15 @@
 package cage;
 
-import animals.*;
+import animals.Animal;
 
-public interface AnimalCage {
+public interface AnimalCage<T extends Animal> {
     
-    int addAnimal(Animal animals);
+    int addAnimal(T animals);
 
     int deliverFood(int wietghOfFood);
 
     int cleanCage();
 
    void getFirstAnimals();
+
 }
