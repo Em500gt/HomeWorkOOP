@@ -2,6 +2,8 @@ package cage;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
+
 import animals.Lion;
 import comporators.LionComparator;
 
@@ -14,9 +16,13 @@ public class LionCage implements AnimalCage<Lion>{
         this.lions = lions;
     }
 
+    public LionCage(){
+        this.lions = new ArrayList<Lion>();
+    }
+
     @Override
     public int addAnimal(Lion animals) {
-        lions.add((Lion) animals);
+        lions.add(animals);
         return lions.size();
     }
 
@@ -55,6 +61,21 @@ public class LionCage implements AnimalCage<Lion>{
 
     public void sortByVolume(){
         Collections.sort(lions, new LionComparator());
+    }
+
+    @Override
+    public Lion takeOffAnimal() {
+        if (lions == null) {
+            return null;
+        } else {
+            Random random = new Random();
+            int i = random.nextInt(lions.size());
+            return lions.remove(i);
+        }
+    }
+
+    public void setLions(ArrayList<Lion> lions) {
+        this.lions = lions;
     }
 
 }

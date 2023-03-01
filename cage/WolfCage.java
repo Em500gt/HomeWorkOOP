@@ -14,9 +14,13 @@ public class WolfCage implements AnimalCage<Wolf>{
         this.wolfs = wolfs;
     }
 
+    public WolfCage() {
+        this.wolfs = new ArrayList<Wolf>();
+    }
+
     @Override
     public int addAnimal(Wolf animals) {
-        wolfs.add((Wolf) animals);
+        wolfs.add(animals);
         return wolfs.size();
     }
 
@@ -51,6 +55,16 @@ public class WolfCage implements AnimalCage<Wolf>{
 
     public void sort(String condition){
         Collections.sort(wolfs, new WolfComparator(condition));
+    }
+
+    @Override
+    public Wolf takeOffAnimal() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'takeOffAnimal'");
+    }
+
+    public void setWolves(ArrayList<Wolf> wolfs) {
+        this.wolfs = wolfs;
     }
 
 }

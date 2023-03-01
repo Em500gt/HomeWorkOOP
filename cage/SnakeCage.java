@@ -15,7 +15,7 @@ public class SnakeCage implements AnimalCage<Snake> {
 
     @Override
     public int addAnimal(Snake animals) {
-        snakes.add((Snake) animals);
+        snakes.add(animals);
         return snakes.size();
     }
 
@@ -46,5 +46,11 @@ public class SnakeCage implements AnimalCage<Snake> {
                 "Snakes=" + snakes +
                 ", clean=" + clean +
                 "}";
+    }
+
+    @Override
+    public Snake takeOffAnimal() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'takeOffAnimal'");
     }
 }

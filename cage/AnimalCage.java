@@ -10,6 +10,8 @@ public interface AnimalCage<T extends Animal> {
 
     int cleanCage();
 
-   void getFirstAnimals();
+    void getFirstAnimals();
+
+    T takeOffAnimal();
 
 }

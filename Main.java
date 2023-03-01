@@ -1,18 +1,19 @@
 import java.util.ArrayList;
 
-import animalUtis.AnimalUtils;
 import animals.*;
+import cage.LionCage;
 import factory.Factory;
+import terminal.TerminalReader;
+import zoo.Zoo;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Wolf> wolfs = Factory.createWolfs(5);
-        System.out.println(wolfs);
-        AnimalUtils.sortAnimals(wolfs);
-        // WolfCage wolfsInCage = new WolfCage(wolfs);
-        // wolfsInCage.sort("age");
-        // System.out.println(wolfsInCage);
-        // wolfsInCage.sort("weight");
-        System.out.println(wolfs);
+        ArrayList<Lion> lions = Factory.createLions(5);
+        LionCage cage = new LionCage();
+        cage.setLions(lions);
+        TerminalReader term = new TerminalReader();
+        Zoo zoo = new Zoo(null, cage, null);
+        term.endless(zoo);
+        System.out.println();
     }
 }
