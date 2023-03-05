@@ -1,6 +1,7 @@
 package cage;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import animals.Snake;
 
@@ -11,6 +12,10 @@ public class SnakeCage implements AnimalCage<Snake> {
 
     public SnakeCage(ArrayList<Snake> snakes){
         this.snakes = snakes;
+    }
+    
+    public SnakeCage() {
+        this.snakes = new ArrayList<Snake>();
     }
 
     @Override
@@ -50,7 +55,21 @@ public class SnakeCage implements AnimalCage<Snake> {
 
     @Override
     public Snake takeOffAnimal() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'takeOffAnimal'");
+        if (snakes == null) {
+            return null;
+        } else {
+            Random random = new Random();
+            int i = random.nextInt(snakes.size());
+            return (Snake) snakes.remove(i);
+        }
+    }
+
+    public void setSnake(ArrayList<Snake> snakes) {
+        this.snakes = snakes;
+    }
+
+    @Override
+    public int countAnimals() {
+            return snakes.size();
     }
 }

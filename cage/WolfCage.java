@@ -2,6 +2,8 @@ package cage;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
+
 import animals.Wolf;
 import comporators.WolfComparator;
 
@@ -59,12 +61,21 @@ public class WolfCage implements AnimalCage<Wolf>{
 
     @Override
     public Wolf takeOffAnimal() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'takeOffAnimal'");
+        if (this.wolfs.isEmpty()) {
+            return null;
+        } else {
+            Random random = new Random();
+            int i = random.nextInt(wolfs.size());
+            return (Wolf) wolfs.remove(i);
+        }
     }
 
     public void setWolves(ArrayList<Wolf> wolfs) {
         this.wolfs = wolfs;
     }
 
+    @Override
+    public int countAnimals() {
+        return wolfs.size();
+    }
 }

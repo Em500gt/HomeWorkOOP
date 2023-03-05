@@ -23,5 +23,14 @@ public class Factory {
         }
         return wolfsCage;
     }
+
+    static public ArrayList<Snake> createSnake(int count){
+        ArrayList<Snake> SnakeCage = new ArrayList<>(count);
+        for (int i = 0; i < count; i++) {
+            Snake SnakeList = new Snake("Snake", new Random().nextInt(50), new Random().nextInt(50), new Random().nextInt(50), new Random().nextInt(50));
+            SnakeCage.add(SnakeList);
+        }
+        return SnakeCage;
+    }
     
 }

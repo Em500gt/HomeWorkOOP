@@ -78,4 +78,9 @@ public class LionCage implements AnimalCage<Lion>{
         this.lions = lions;
     }
 
+    @Override
+    public int countAnimals() {
+        return lions.size();
+    }
+
 }

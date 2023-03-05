@@ -19,6 +19,18 @@ public class CommandExecutableFactoryImpl implements CommandExecutableFactory {
             case "lioncreate" -> {
                 return new CreateLionExecutable(zoo, input);
             }
+            case "snakedelete" -> {
+                return new DeleteSnakeExecutable(zoo);
+            }
+            case "snakecreate" -> {
+                return new CreateSnakeExecutable(zoo, input);
+            }
+            case "wolfdelete" -> {
+                return new DeleteWolfExecutable(zoo);
+            }
+            case "wolfcreate" -> {
+                return new CreateWolfExecutable(zoo, input);
+            }
             default -> {
                 return null;
             }

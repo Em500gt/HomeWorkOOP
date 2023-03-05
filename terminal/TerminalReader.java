@@ -1,6 +1,7 @@
 package terminal;
 
 import zoo.Zoo;
+import static terminal.InputCheck.isCheck;
 
 import java.util.Scanner;
 
@@ -34,10 +35,11 @@ public class TerminalReader {
     public void endless() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
+            System.out.println(zoo.toString() + "\n");
             new inMessage().consoleMessage();
             String input = scanner.nextLine();
             if (input.equals("stop")) break;
-            if (new InputCheck(input).isCheck()) {
+            if (isCheck(input)) {
                 Command newCommand = this.commandParser.parseCommand(input);
                 this.setCommandExecutable(newCommand);
                 this.commandExecutable.execute();
@@ -47,4 +49,5 @@ public class TerminalReader {
         }
         scanner.close();
     }
+
 }

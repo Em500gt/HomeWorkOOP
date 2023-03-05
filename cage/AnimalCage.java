@@ -14,4 +14,6 @@ public interface AnimalCage<T extends Animal> {
 
     T takeOffAnimal();
 
+    int countAnimals();
+
 }

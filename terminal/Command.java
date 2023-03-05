@@ -23,7 +23,5 @@ public class Command {
         this.action = action;
         this.animal = animal;
         this.parameters = parameters;
-
-
     }
 }

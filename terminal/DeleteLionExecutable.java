@@ -13,4 +13,8 @@ public class DeleteLionExecutable implements CommandExecutable{
     public void execute() {
         this.zoo.takeOfLion();
     }
+    @Override
+    public  DeleteLionExecutable getZoo(Zoo zoo, Command command) {
+        return new DeleteLionExecutable(zoo);
+    }
 }
