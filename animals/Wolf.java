@@ -6,8 +6,8 @@ public class Wolf extends Animal {
     private static final int MAX_WEIGHT = 10;
     private static final String TYPE = "Wolf";
 
-    public Wolf(int age, int weight, int countLimbs, int maneVolume) {
-        super(age, weight, countLimbs);
+    public Wolf(String name, int age, int weight, int countLimbs, int maneVolume) {
+        super(name, age, weight, countLimbs);
         this.maneVolume = maneVolume;
     }
 

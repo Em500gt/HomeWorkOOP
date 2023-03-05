@@ -2,11 +2,13 @@ package animals;
 
 public abstract class Animal{
 
+    protected String name;
     protected int age;
     protected int weight;
     private int countLimbs;
 
-    public Animal(int age, int weight, int countLimbs){
+    public Animal(String name, int age, int weight, int countLimbs){
+        this.name = name;
         this.age = age;
         this.weight = weight;
         this.countLimbs = countLimbs;
@@ -20,6 +22,14 @@ public abstract class Animal{
             System.out.println("Max weight exceeded");
         }
         
+    }
+
+    public String getNickName() {
+        return name;
+    }
+
+    public void setNickName(String nickName) {
+        this.name = nickName;
     }
 
     public void setAge(int age){

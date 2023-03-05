@@ -4,6 +4,7 @@ import animals.*;
 import cage.LionCage;
 import factory.Factory;
 import terminal.TerminalReader;
+import terminal.ZooCommandParser;
 import zoo.Zoo;
 
 public class Main {
@@ -11,9 +12,10 @@ public class Main {
         ArrayList<Lion> lions = Factory.createLions(5);
         LionCage cage = new LionCage();
         cage.setLions(lions);
-        TerminalReader term = new TerminalReader();
         Zoo zoo = new Zoo(null, cage, null);
-        term.endless(zoo);
+        TerminalReader term = TerminalReader.newTerminalReader(new ZooCommandParser());
+        term.setZoo(zoo);
+        term.endless();
         System.out.println();
-    }
+        }
 }
